@@ -1,0 +1,3 @@
+cd ../
+yarn
+yarn start

@@ -1,0 +1,1 @@
+call storeSystem.bat
