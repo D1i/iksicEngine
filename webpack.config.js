@@ -5,15 +5,15 @@ module.exports = {
     entry: "index.js",
     devtool: "inline-source-map",
     output: {
-        filename: "dist.js",
-        path: path.resolve(__dirname, "dist"),
+        filename: "build.js",
+        path: path.resolve(__dirname, "build"),
         library: "mySlider",
         libraryTarget: "this",
         libraryExport: "default"
     },
     resolve: {
         modules: [path.resolve(__dirname, "./")],
-        extensions: [".js"],
+        extensions: [".js", '.ts'],
     },
     module: {
         rules: [
@@ -48,6 +48,11 @@ module.exports = {
                     loader: "svg-inline-loader"
                 }]
             },
+            {
+                test: /\.ts?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+              },
         ],
     },
 };
